@@ -47,7 +47,7 @@ $page_support	= $override_support ?: $global_support;
                     </g>
                 </svg>
             </div>
-            <?php if(have_rows('opt_contact', 'option')) : the_row(); ?>
+            <?php if($global_contact) : ?>
                 <div class="contact-wrapper">
                     <a href="tel:<?php echo get_sub_field('telefonnummer'); ?>">
                         <svg xmlns="http://www.w3.org/2000/svg" width="19.177" height="19.121" viewBox="0 0 19.177 19.121">
