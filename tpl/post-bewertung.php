@@ -32,7 +32,7 @@ if($stars) {
 			<?php include 'post/thumbnail.php'; ?>
 		<?php } ?>
 
-		<div class="post-content">
+		<div class="post-content uk-text-center">
 			<header class="post-header">
 	            <p class="post-stars">
 					<?php if($stars) { ?>
@@ -45,12 +45,6 @@ if($stars) {
 					<?php } ?>
 	            </p>
 
-				<p class="post-title">
-					<strong><?= get_the_title() ?></strong>
-					<?php if($data['subheadline']) { ?>
-						&nbsp;<?= $data['subheadline'] ?>
-					<?php } ?>
-				</p>
 			</header>
 
 			<?php if(! $hide_descr) { ?>
@@ -63,6 +57,15 @@ if($stars) {
 				}
 				?>
 			<?php } ?>
+
+            <p class="post-title">
+                <strong><?= get_the_title() ?></strong>
+                <?php if($data['subheadline']) { ?>
+                    &nbsp;<?= $data['subheadline'] ?>
+                <?php } ?>
+            </p>
+
+
 		</div>
 
 	</div>
