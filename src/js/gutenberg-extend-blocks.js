@@ -58,6 +58,10 @@ wp.blocks.registerBlockStyle( 'core/cover', {
 	label: 'mind. 50% Höhe'
 } );
 
+wp.blocks.registerBlockStyle( 'core/group', {
+	name: 'trendcom-container',
+	label: 'trendcom Container',
+} );
 
 // ----------------------------------------------------
 // ----------------------------------------------------
@@ -163,4 +167,9 @@ wp.blocks.registerBlockStyle( 'core/paragraph', {
 wp.blocks.registerBlockStyle( 'core/paragraph', {
 	name: 'h6',
 	label: 'H6-Optik'
+} );
+
+wp.blocks.registerBlockStyle( 'core/paragraph', {
+	name: 'subheadline',
+	label: 'Subheadline'
 } );

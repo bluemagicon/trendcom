@@ -10,7 +10,7 @@ get_template_part('functions/gutenberg-color-palette');
 //get_template_part('functions/gutenberg-custom-blocks');
 get_template_part('functions/gutenberg-extend-blocks');
 get_template_part('functions/ghostkit-enqueue');
-//get_template_part('functions/ghostkit-custom-icons');
+get_template_part('functions/ghostkit-custom-icons');
 
 
 

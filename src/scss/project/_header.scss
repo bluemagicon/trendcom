@@ -1,5 +1,11 @@
 .header {
     transform: translateY(0) !important;
+    .nav{
+        font-size: 1em;
+    }
+    .nav-home{
+
+    }
 
 
     &--sticky,
@@ -89,7 +95,7 @@
             }
 
             path, polygon {
-                fill: w-color(dark);
+                /*fill: w-color(dark);*/
                 transition: all .2s ease-in-out;
             }
 

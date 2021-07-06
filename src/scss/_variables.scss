@@ -1,1 +1,33 @@
 
+/*** HAUPTFARBEN ***/
+$w-color-primary: #008A90;
+$w-color-light: #9AC4D1;
+$w-color-dark: #283536;
+/*$w-color-medium: #6a7177 !default;
+$w-color-white: #fff !default;
+$w-color-black: #000 !default;*/
+
+/*** GLOBAL ***/
+$w-def-font-family: 'Barlow', sans-serif;
+$w-def-color-text: #6A7A7B;
+$w-def-box-shadow: 0px 10px 50px rgba(0, 128, 134, 0.11);
+
+
+/*** HEADLINES ***/
+$w-headline-font-weight: 600;
+$w-h1-size: 2.0em;
+$w-h3-size-bp: 1.2em;
+$w-headline-color: $w-color-dark;
+
+
+/*** BUTTONS ***/
+$w-button-font-weight: 600;
+$w-button-border-radius: 5px;
+
+/*** ICON-LIST ***/
+.is-style-icon{
+  --gkt-icon-lists--decoration__width: 1.2em;
+}
+
+
+
