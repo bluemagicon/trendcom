@@ -95,3 +95,114 @@
   justify-content: center;
   height: 80px;
 }
+
+/*** HEADER & FOOTER ***/
+.header-btn-wrapper{
+  display: flex;
+  margin-left: 3vw;
+  a{
+    display: flex;
+    margin-right: 5px;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    background: #008A90;
+    border-radius: 4px;
+    &:last-child{
+      margin-right: 0;
+    }
+    svg{
+      width: 16px;
+      path{
+        fill: #fff;
+      }
+    }
+  }
+}
+.footer-contact{
+  .contact-data{
+    display: flex;
+    li{
+      margin-right: 25px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+#footer{
+  padding: 75px 0;
+  box-shadow: 0px 0px 60px rgba(0, 128, 134, 0.08);
+  .alignwide{
+    display: flex;
+    justify-content: space-between;
+    .contact-wrapper{
+      display: flex;
+      align-items: center;
+      a{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        color: #283536;
+        svg{
+          margin-right: 10px;
+          path{
+            fill: #1d7d8c;
+          }
+        }
+      }
+    }
+    .col{
+      display: flex;
+      align-items: center;
+      &:first-child{
+        .img-wrapper{
+          width: 65px;
+          margin-right: 3vw;
+          svg{
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+      &:last-child{
+        text-transform: uppercase;
+        font-size: 0.8em;
+        color: #6F6F6F;
+        .img-wrapper{
+          width: 160px;
+          margin-left: 2vw;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 992px){
+  #footer{
+    padding: 25px 0;
+    .alignwide{
+      flex-direction: column;
+      align-items: center;
+      .col{
+        flex-direction: column;
+        .img-wrapper{
+          margin: 0 !important;
+          margin-bottom: 15px !important;
+        }
+        &:first-child{
+          margin-bottom: 25px;
+        }
+        &:last-child{
+          .footer-menu{
+            order: 2;
+          }
+          .img-wrapper{
+            order: 1;
+          }
+        }
+      }
+    }
+  }
+}
