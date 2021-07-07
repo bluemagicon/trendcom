@@ -24,7 +24,7 @@
 @import 'framework/core/links';
 @import 'framework/core/lists';
 @import 'framework/core/typo';
-@import 'framework/core/navigation';
+//@import 'framework/core/navigation';
 @import 'framework/core/offcanvas';
 @import 'framework/core/social';
 
@@ -59,8 +59,8 @@
 @import 'framework/wordpress/ghostkit/button';
 @import 'framework/wordpress/ghostkit/grid';
 @import 'framework/wordpress/ghostkit/icon';
-@import 'framework/wordpress/ghostkit/pricing';
-@import 'framework/wordpress/ghostkit/progressbar';
+//@import 'framework/wordpress/ghostkit/pricing';
+//@import 'framework/wordpress/ghostkit/progressbar';
 @import 'framework/wordpress/ghostkit/testimonial';
 @import 'framework/wordpress/ghostkit/counter';
 
@@ -90,7 +90,8 @@
 
 @import 'project/footer';
 @import 'project/header';
-@import 'project/header-meta';
+@import 'project/navigation';
+//@import 'project/header-meta';
 @import 'project/modal';
 @import 'project/custom';
 @import 'project/post';

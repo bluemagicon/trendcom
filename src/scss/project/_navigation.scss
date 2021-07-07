@@ -1,0 +1,101 @@
+.nav {
+    font-size: $w-font-size-small;
+    display: flex;
+
+
+    // -----------------------------------------------
+    // -----------------------------------------------
+    // Home Item
+
+    &-home {
+        margin-right: 1.5em;
+    }
+
+
+    // -----------------------------------------------
+    // -----------------------------------------------
+    // Menu List
+
+    &-list {
+
+        ul {
+            @extend .w-list;
+            @extend .w-list--inline;
+
+
+            li {
+                position: relative;
+
+                a {
+                    padding: 1em 0;
+                    white-space: nowrap;
+                }
+
+                &:hover {
+
+                    > ul {
+                        display: block;
+                    }
+                }
+            }
+
+
+            // Children
+
+            ul {
+                box-shadow: $w-def-box-shadow;
+                transform: translate(-50%, 0);
+                background: $w-color-white;
+                position: absolute;
+                display: none;
+                padding: 0;
+                left: 50%;
+                top: 2em;
+
+                li {
+                    display: block;
+                    margin-right: 0 !important;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid rgba(w-color(primary), .1);
+                    }
+
+                    a {
+                        padding: .75em 1.25em;
+                        display: block;
+                        text-align: center;
+                    }
+                }
+
+                ul {
+                    transform: none;
+                    left: calc(100% - 1px);
+                    top: -1px;
+                }
+            }
+        }
+    }
+
+    a {
+        color: w-color(dark);
+
+        &:hover {
+            color: w-color(primary);
+        }
+    }
+
+
+
+    // -----------------------------------------------
+    // -----------------------------------------------
+    // Aktiver Menüpunkt
+
+    .current_page_ancestor,
+    .current_page_item,
+    .current-menu-item {
+
+        & > a, & > a:hover {
+            color: w-color(primary);
+        }
+    }
+}
