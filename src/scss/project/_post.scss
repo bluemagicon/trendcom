@@ -1,0 +1,174 @@
+// ===============================================
+// ===============================================
+// Allgemein! Post-Teaser und Single
+
+.post {
+
+    // Image
+
+    &-image {
+        overflow: hidden;
+        display: block;
+        margin-bottom: 1em;
+
+        img {
+            transition: all .4s ease-in-out;
+            max-width: none;
+            display: block;
+            width: 100%;
+        }
+    }
+
+
+    // Sterne, z.B. Reviews
+
+    &-stars {
+        color: w-color-status(golden);
+        font-size: 1.4em;
+        margin: 1rem 0;
+    }
+
+
+    // Datenliste
+
+    &-datalist {
+        @extend .w-list;
+        @extend .w-list--inline;
+        @extend .w-list--icons;
+        margin: 1em 0;
+        color: $w-def-color-text;
+
+        span {
+            display: inline-block;
+            margin-left: -.125em;
+
+            & + span:before {
+                content: ",";
+                margin-right: .125em;
+            }
+        }
+
+        >li {
+            margin: 2px 0;
+        }
+
+        svg, i {
+            color: var(--baw-color-primary);
+        }
+
+        a {
+            color: inherit;
+            display: block;
+
+            &:hover {
+                color: var(--baw-color-primary);
+            }
+        }
+    }
+
+
+    &-meta {
+        font-size: $w-font-size-big;
+
+        svg, i {
+            color: $w-color-primary;
+            margin-right: .25em;
+        }
+
+        .is-style-subheadline {
+            font-size: .9em;
+            font-weight: bold;
+        }
+    }
+
+
+    // Socials
+
+    &-socials {
+        margin: 1em 0;
+    }
+
+
+
+    // ===============================================
+    // ===============================================
+    // Post-Teaser bzw. Post-Box
+
+    &--box {
+        align-items: stretch;
+        display: flex;
+        width: 100%;
+
+
+        .post-inner {
+            border-radius: $w-def-border-radius;
+            box-shadow: $w-def-box-shadow;
+            background: $w-color-white;
+            transition: $w-def-easing;
+            overflow: hidden;
+            margin: 1.5em 0;
+            width: 100%;
+            display: block;
+
+            &:hover {
+                box-shadow: $w-def-box-shadow-hover;
+
+                .post-image img {
+                    transform: scale(1.04);
+                }
+            }
+
+            &.has--button {
+                padding-bottom: $w-post-box-button-padding;
+                position: relative;
+
+                .post-button {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        .post-content, .post-button {
+            margin: 1.75em 2em;
+        }
+
+
+        &.benefit {
+            text-align: center;
+            font-size: $w-font-size-small;
+
+            .post-inner {
+                background: $w-color-primary;
+                color: $w-color-white;
+            }
+        }
+
+    }
+
+
+
+    // ===============================================
+    // ===============================================
+    // Detail-Page (singular/single)
+
+    &--detail {
+
+    }
+}
+
+.connector [class*="uk-child-width-1-1@l"] .post--box.stellenangebot {
+    .post-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:after {
+            content: "+";
+            padding: 0 2rem;
+            font-size: 3em;
+        }
+    }
+}

@@ -22,33 +22,37 @@ if ( $next_post || $prev_post ) {
 
 	?>
 
-	<nav class="single-navigation section-inner<?php echo esc_attr( $pagination_classes ); ?>" aria-label="<?php esc_attr_e( 'Post', 'twentytwenty' ); ?>" role="navigation">
-		<div class="single-navigation-inner uk-grid">
-			<div class="uk-width-1-2 single-navigation-prev">
-				<?php if ( $prev_post ) { ?>
-					<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
-						<?= baw_svg('solid/arrow-left') ?>
-						<span><?= __('vorheriger Artikel', 'baw') ?></span>
-						<small class="uk-visible@m">
-							<?php echo wp_kses_post( get_the_title( $prev_post->ID ) ); ?>
-						</small>
-					</a>
-				<?php } ?>
-			</div>
-			<div class="uk-width-1-2 single-navigation-next">
-				<?php if ( $next_post ) {?>
-					<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
-						<?= baw_svg('solid/arrow-right') ?>
-						<span><?= __('nächster Artikel', 'baw') ?></span>
-						<small class="uk-visible@m">
-							<?php echo wp_kses_post( get_the_title( $next_post->ID ) ); ?>
-						</small>
-					</a>
-				<?php } ?>
-			</div>
+	<div class="single-footer">
+		<div class="single-footer-inner alignwide">
+			<nav class="single-navigation section-inner<?php echo esc_attr( $pagination_classes ); ?>" aria-label="<?php esc_attr_e( 'Post', 'twentytwenty' ); ?>" role="navigation">
+				<div class="single-navigation-inner uk-grid">
+					<div class="uk-width-1-2 single-navigation-prev">
+						<?php if ( $prev_post ) { ?>
+							<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>">
+								<?= baw_svg('solid/arrow-left') ?>
+								<b><?= __('vorheriger Beitrag', 'baw') ?></b>
+								<small class="uk-visible@m">
+									<?php echo wp_kses_post( get_the_title( $prev_post->ID ) ); ?>
+								</small>
+							</a>
+						<?php } ?>
+					</div>
+					<div class="uk-width-1-2 single-navigation-next">
+						<?php if ( $next_post ) {?>
+							<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>">
+								<?= baw_svg('solid/arrow-right') ?>
+								<b><?= __('nächster Beitrag', 'baw') ?></b>
+								<small class="uk-visible@m">
+									<?php echo wp_kses_post( get_the_title( $next_post->ID ) ); ?>
+								</small>
+							</a>
+						<?php } ?>
+					</div>
 
+				</div>
+			</nav>
 		</div>
-	</nav>
+	</div>
 
 	<?php
 }

@@ -1,0 +1,53 @@
+.single {
+
+    &-header,
+    &-listing,
+    &-footer {
+        @include w-block-margin-xl();
+    }
+
+    &-header {
+        @include w-align($w-breakpoint-medium);
+    }
+
+    &-footer {
+    }
+
+
+
+
+    &-navigation {
+
+        a {
+            position: relative;
+            display: block;
+
+            span, small {
+                display: block;
+            }
+
+            svg {
+                transform: translate(0, -50%);
+                position: absolute;
+                top: 50%;
+            }
+        }
+
+        &-prev a {
+            padding-left: 2em;
+
+            svg {
+                left: 0;
+            }
+        }
+
+        &-next a {
+            padding-right: 2em;
+            text-align: right;
+
+            svg {
+                right: 0;
+            }
+        }
+    }
+}
