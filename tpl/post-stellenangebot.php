@@ -16,10 +16,16 @@ include 'post/load-vars.php';
 // ----------------------------------------------------------------------
 // Custom Fields
 
-$entry = get_field('career_entry', $theID) ?: 'now';
-$entry_date = $entry == 'now' ? get_field('glbl_career_entrynow', 'option') : get_field('career_entrydate', $theID);
-$contact = get_field('career_contact', $theID) ? get_field('career_contact_cstm', $theID) : get_field('glbl_career_contact', 'option');
-$benefits = get_field('career_benefits', $theID) ? get_field('career_benefits_cstm', $theID) : get_field('glbl_career_benefits', 'option');
+$homeoffice = get_field('career_homeoffice', $theID) ? get_field('career_homeoffice_text', $theID) : false;
+$entry = get_field('career_entry', $theID) ?: false;
+if($entry) {
+	if($entry && $entry == "text") {
+		$entry_date = get_field('career_entrydate_text', $theID);
+	} else {
+		$entry_date = get_field('career_entrydate', $theID);
+	}
+}
+
 
 // ----------------------------------------------------------------------
 // Taxonomy Terms
@@ -38,30 +44,39 @@ $career_cluster	= get_the_terms($theID, 'karrierebereich');
 
 
 <article <?php post_class('post post--box'); ?> id="post-<?php the_ID(); ?>">
-	<div class="post-inner">
 
-		<?php if(! $hide_images) { ?>
-			<?php include 'post/thumbnail.php'; ?>
-		<?php } ?>
+	<a href="<?= get_permalink() ?>" class="post-inner">
 
 		<div class="post-content">
-			<?php include 'post/header.php'; ?>
+			<header class="post-header">
+			    <h3 class="post-title">
+		            <?= get_the_title(); ?>
+		        </h3>
+			</header>
+
 
 			<?php if(! $hide_descr) { ?>
 				<ul class="post-datalist">
+					<?php if($entry && $entry_date) { ?>
+						<li>
+							<?= baw_svg('solid/clock').$entry_date ?>
+						</li>
+					<?php } ?>
 					<?php foreach($post_taxs as $tax) {
 						$terms = get_the_terms($theID, $tax);
 						$term_icon = $post_taxs_icons[$tax] ?: 'solid/info-circle'; ?>
-						<li>
-							<?= baw_svg($term_icon) ?>
-							<?php foreach($terms as $term) { ?>
-								<span><?= $term->name ?></span>
-							<?php } ?>
-						</li>
+						<?php if($terms) { ?>
+							<li>
+								<?= baw_svg($term_icon) ?>
+								<?php foreach($terms as $term) { ?>
+									<span><?= $term->name ?></span>
+								<?php } ?>
+							</li>
+						<?php } ?>
 					<?php } ?>
-					<?php if($entry_date) { ?>
+					<?php if($homeoffice) { ?>
 						<li>
-							<?= baw_svg('solid/clock').$entry_date ?>
+							<?= baw_svg('solid/home').$homeoffice ?>
 						</li>
 					<?php } ?>
 				</ul>
@@ -76,10 +91,8 @@ $career_cluster	= get_the_terms($theID, 'karrierebereich');
 				?>
 			<?php } ?>
 
-			<?php include 'post/footer.php'; ?>
-
 		</div>
 
-	</div>
+	</a>
 
 </article>

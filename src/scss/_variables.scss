@@ -11,6 +11,7 @@ $w-color-black: #000 !default;*/
 $w-def-font-family: 'Barlow', sans-serif;
 $w-def-color-text: #6A7A7B;
 $w-def-box-shadow: 0px 10px 50px rgba(0, 128, 134, 0.11);
+$w-def-border-radius: 10px;
 
 
 /*** HEADLINES ***/
@@ -28,6 +29,3 @@ $w-button-border-radius: 5px;
 .is-style-icon{
   --gkt-icon-lists--decoration__width: 1.2em;
 }
-
-
-
