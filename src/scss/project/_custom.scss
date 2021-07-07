@@ -1,4 +1,16 @@
 
+/*** KEINE 100% BUTTONS ***/
+.ghostkit-button{
+  width: inherit;
+}
+@media(max-width: 959px){
+  .ghostkit-button{
+    .ghostkit-button-icon{
+      margin-left: 0 !important;
+      margin-right: var(--gkt-button--icon__offset) !important;
+    }
+  }
+}
 
 /*** BUGFIX: Bilder werden sonst nicht zentiert (Flaggen) ***/
 .wp-block-image{
@@ -191,6 +203,15 @@
     .alignwide{
       flex-direction: column;
       align-items: center;
+      .contact-wrapper{
+        flex-direction: column;
+        a{
+          margin: 0 !important;
+          &:first-child{
+            margin-bottom: 5px !important;
+          }
+        }
+      }
       .col{
         flex-direction: column;
         .img-wrapper{
@@ -209,6 +230,13 @@
           }
         }
       }
+    }
+  }
+}
+@media(max-width: 768px){
+  .is-style-trendcom-container{
+    .wp-block-group__inner-container{
+      padding: 1rem 1rem;
     }
   }
 }
