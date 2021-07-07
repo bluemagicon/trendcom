@@ -1,6 +1,6 @@
 <?php
 
-//add_filter('show_admin_bar', '__return_false');
+add_filter('show_admin_bar', '__return_false');
 
 
 get_template_part('functions/register-taxonomies');
