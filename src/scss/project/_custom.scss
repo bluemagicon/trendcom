@@ -26,6 +26,11 @@
 .post-stars{
   color: $w-color-primary !important;
 }
+.modal__header{
+  .post-stars{
+    margin: 0 !important;
+  }
+}
 
 /*** TEAM ***/
 .post--box{
