@@ -101,9 +101,12 @@ $page_header	= $override_header ?: $global_header;
         <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
             <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="dyn-modal-title">
                 <header class="modal__header">
-                    <p>
-                        <strong class="modal__title" id="dyn-modal-title"></strong>
-                        <span class="modal__title" id="dyn-modal-subtitle"></span>
+                    <p class="post-stars">
+                        <?= baw_svg('solid/star') ?>
+                        <?= baw_svg('solid/star') ?>
+                        <?= baw_svg('solid/star') ?>
+                        <?= baw_svg('solid/star') ?>
+                        <?= baw_svg('solid/star') ?>
                     </p>
                     <button class="modal__close" aria-label="Close modal" data-micromodal-close=""></button>
                 </header>
