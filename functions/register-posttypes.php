@@ -2,10 +2,13 @@
 
 function baw_register_my_cpts() {
 
+
+
+
+
 	/**
 	 * Post Type: Unser Team.
 	 */
-
 	$labels = [
 		"name" => __( "Unser Team", "baw" ),
 		"singular_name" => __( "Mitarbeiter", "baw" ),
@@ -46,6 +49,19 @@ function baw_register_my_cpts() {
 	];
 
 	register_post_type( "team", $args );
+
+	$args = [
+		'labels' => array(
+			'name' => __( 'Mitarbeiterbewertungen' ),
+			'singular_name' => __( 'Mitarbeiterbewertung' )
+		),
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array('slug' => 'mitarbeiterbewertung'),
+		'show_in_rest' => true,
+	];
+
+	register_post_type( "mitarbeiterbewertung", $args );
 
 	/**
 	 * Post Type: Bewertungen.
