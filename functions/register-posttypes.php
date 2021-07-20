@@ -57,6 +57,7 @@ function baw_register_my_cpts() {
 		),
 		'public' => true,
 		'has_archive' => true,
+		"publicly_queryable" => true,
 		'rewrite' => array('slug' => 'mitarbeiterbewertung'),
 		'show_in_rest' => true,
 	];
